@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 48 33% 98%;
+    --foreground: 222 47% 11%;
+    --border: 43 16% 90%;
+    --ring: 221 83% 53%;
+    --radius: 1rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-background font-sans text-ink antialiased;
+    font-feature-settings: "cv11", "ss01";
+    letter-spacing: -0.005em;
+  }
+
+  ::selection {
+    background: rgba(37, 99, 235, 0.14);
+    color: #0f172a;
+  }
+
+  /* Consistent, visible keyboard focus for links (buttons handle their own ring). */
+  a:focus-visible {
+    outline: 2px solid #2563eb;
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  /* Apple-like display headings: large, tight, and never heavy. */
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+    font-weight: 600;
+    letter-spacing: -0.028em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@layer components {
+  /*
+   * The core brand material. Restrained on purpose:
+   * thin hairline border, gentle transparency, quiet shadow.
+   */
+  .glass {
+    @apply relative rounded-3xl backdrop-blur-xl;
+    background: rgba(255, 255, 255, 0.78);
+    border: 1px solid rgba(30, 27, 20, 0.06);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.7),
+      0 1px 2px rgba(30, 27, 20, 0.03),
+      0 10px 30px -14px rgba(30, 27, 20, 0.12);
+  }
+
+  .glass-tint {
+    background: rgba(255, 255, 255, 0.82);
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-[0.8rem] font-medium uppercase tracking-[0.16em] text-brand;
+  }
+
+  .hairline {
+    @apply h-px w-full bg-line/80;
+  }
+
+  /* A whisper of brand light — used sparingly behind the hero only. */
+  .aura {
+    background: radial-gradient(
+      55% 55% at 50% 0%,
+      rgba(37, 99, 235, 0.08) 0%,
+      rgba(37, 99, 235, 0.03) 42%,
+      transparent 70%
+    );
+  }
+}
+
+@layer utilities {
+  /* ~700px measure for optimal readability. */
+  .measure {
+    max-width: 44rem;
+  }
+
+  .container-tight {
+    @apply container max-w-[1120px];
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
