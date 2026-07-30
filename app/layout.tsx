@@ -64,6 +64,7 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: "#ffffff",
+  colorScheme: "light",
   width: "device-width",
   initialScale: 1,
 };
@@ -88,7 +89,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className={`${inter.variable} ${sora.variable}`}>
+    <html lang="en" className={`light ${inter.variable} ${sora.variable}`} style={{ colorScheme: "light" }}>
       <body className="min-h-screen bg-background">
         <script
           type="application/ld+json"

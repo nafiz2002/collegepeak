@@ -21,26 +21,9 @@ function UniversityTile({ uni }: { uni: University }) {
         </p>
       </div>
 
-      {/* Default: acceptance confirmation. Hover: outcome detail. */}
-      <div className="relative mt-5 h-9">
-        <p className="absolute inset-0 flex items-center gap-2 text-sm text-muted transition-opacity duration-300 group-hover:opacity-0">
-          <span className="size-1.5 rounded-full bg-brand" />
-          Admitted · Class of 2030
-        </p>
-        <dl className="absolute inset-0 grid grid-cols-3 gap-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-          {[
-            ["Major", uni.major],
-            ["Award", uni.scholarship],
-            ["Student", uni.student],
-          ].map(([label, value]) => (
-            <div key={label as string} className="min-w-0">
-              <dt className="text-[0.6rem] font-medium uppercase tracking-[0.08em] text-muted">
-                {label}
-              </dt>
-              <dd className="truncate text-[0.72rem] font-medium text-ink">{value}</dd>
-            </div>
-          ))}
-        </dl>
+      <div className="mt-5 flex items-center gap-2 text-sm text-muted">
+        <span className="size-1.5 rounded-full bg-brand" />
+        Admitted · Class of 2030
       </div>
     </div>
   );
@@ -53,7 +36,7 @@ export function AcceptanceProfile() {
         <SectionHeading
           eyebrow="Where our students land"
           title="Offers earned across our cohorts."
-          description="100% of our students received admission offers and scholarship awards. Hover any school to see the outcome."
+          description="100% of our students received admission offers and scholarship awards across top U.S. universities."
         />
       </div>
 

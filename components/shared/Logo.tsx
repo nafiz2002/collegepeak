@@ -38,13 +38,16 @@ export function PeakGlyph({ className }: { className?: string }) {
 export function Logo({
   className,
   variant = "full",
+  onClick,
 }: {
   className?: string;
   variant?: "full" | "mark";
+  onClick?: () => void;
 }) {
   return (
     <Link
       href="/"
+      onClick={onClick}
       className={cn("group inline-flex items-center gap-2.5", className)}
       aria-label={`${SITE.name} — home`}
     >

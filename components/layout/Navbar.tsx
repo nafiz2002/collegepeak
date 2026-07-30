@@ -35,6 +35,14 @@ export function Navbar() {
     };
   }, [open]);
 
+  const handleNavClick = (href: string, e: React.MouseEvent<HTMLAnchorElement>) => {
+    setOpen(false);
+    if (href === "/" && pathname === "/") {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   return (
     <header className="fixed inset-x-0 top-0 z-50">
       <motion.div
@@ -49,7 +57,14 @@ export function Navbar() {
         )}
         style={{ width: "calc(100% - 1.5rem)" }}
       >
-        <Logo />
+        <Logo
+          onClick={() => {
+            setOpen(false);
+            if (pathname === "/") {
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+          }}
+        />
 
         <nav className="hidden items-center gap-1 lg:flex">
           {NAV_ITEMS.map((item) => {
@@ -58,6 +73,7 @@ export function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
+                onClick={(e) => handleNavClick(item.href, e)}
                 className={cn(
                   "relative rounded-full px-3.5 py-2 text-sm font-medium transition-colors",
                   active ? "text-brand-700" : "text-muted hover:text-ink"
@@ -117,6 +133,7 @@ export function Navbar() {
                     >
                       <Link
                         href={item.href}
+                        onClick={(e) => handleNavClick(item.href, e)}
                         className={cn(
                           "flex items-center justify-between border-b border-line/70 py-5 font-display text-2xl tracking-[-0.02em] transition-colors",
                           active ? "text-brand-700" : "text-ink"
@@ -141,12 +158,12 @@ export function Navbar() {
                 transition={{ duration: 0.4, delay: 0.5, ease }}
                 className="mt-auto flex flex-col gap-3"
               >
-                <Button asChild size="lg" className="w-full">
+                <Button asChild size="lg" className="w-full" onClick={() => setOpen(false)}>
                   <a href={CTA.strategySession} target="_blank" rel="noopener noreferrer">
                     Book a Strategy Session
                   </a>
                 </Button>
-                <Button asChild size="lg" variant="secondary" className="w-full">
+                <Button asChild size="lg" variant="secondary" className="w-full" onClick={() => setOpen(false)}>
                   <a href={CTA.profileAudit} target="_blank" rel="noopener noreferrer">
                     Start Your Admissions Journey
                   </a>
