@@ -68,10 +68,14 @@ export const metadata: Metadata = {
     shortcut: "/logos/cp.png",
     apple: "/logos/cp.png",
   },
+  other: {
+    "color-scheme": "light only",
+    "supported-color-schemes": "light",
+  },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#ffffff",
+  themeColor: "#FAFAF8",
   colorScheme: "light",
   width: "device-width",
   initialScale: 1,
@@ -98,6 +102,13 @@ export default function RootLayout({
 
   return (
     <html lang="en" className={`light ${inter.variable} ${sora.variable}`} style={{ colorScheme: "light" }}>
+      <head>
+        <meta name="color-scheme" content="light only" />
+        <meta name="supported-color-schemes" content="light" />
+        <meta name="theme-color" content="#FAFAF8" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+      </head>
       <body className="min-h-screen bg-background">
         <script
           type="application/ld+json"
