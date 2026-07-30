@@ -25,7 +25,7 @@ export function UniversityMark({
   name,
   tint = "#2563EB",
   slug,
-  hasLogo = false,
+  hasLogo = true,
   size = 56,
   className,
 }: UniversityMarkProps) {
@@ -33,17 +33,17 @@ export function UniversityMark({
     return (
       <span
         className={cn(
-          "grid place-items-center rounded-2xl border border-line bg-white p-3",
+          "grid shrink-0 place-items-center rounded-2xl border border-line bg-white p-2 shadow-soft transition-transform duration-300 group-hover:scale-105 overflow-hidden",
           className
         )}
         style={{ width: size, height: size }}
       >
         <Image
-          src={`/logos/${slug}.svg`}
+          src={`/logos/${slug}.png`}
           alt={name}
           width={size}
           height={size}
-          className="h-full w-full object-contain"
+          className="h-full w-full object-contain p-0.5"
         />
       </span>
     );
