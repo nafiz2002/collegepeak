@@ -60,6 +60,14 @@ export const metadata: Metadata = {
     description: SITE.description,
     images: ["/og.png"],
   },
+  icons: {
+    icon: [
+      { url: "/logos/cp.png", type: "image/png" },
+      { url: "/favicon.ico" },
+    ],
+    shortcut: "/logos/cp.png",
+    apple: "/logos/cp.png",
+  },
 };
 
 export const viewport: Viewport = {
