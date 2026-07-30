@@ -80,7 +80,7 @@ export function SuccessStoriesView() {
         <div className="container-tight mb-10 text-center">
           <span className="eyebrow">
             <span className="size-1.5 rounded-full bg-brand" />
-            Class of 2030 · Acceptance Profile
+            Classes of 2028–2030 · Acceptance Profile
           </span>
           <h2 className="mt-4 font-display text-3xl tracking-[-0.02em] text-ink">
             Offers earned across our cohorts.

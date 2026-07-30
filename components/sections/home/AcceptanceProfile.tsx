@@ -23,7 +23,7 @@ function UniversityTile({ uni }: { uni: University }) {
 
       <div className="mt-5 flex items-center gap-2 text-sm text-muted">
         <span className="size-1.5 rounded-full bg-brand" />
-        Admitted · Class of 2030
+        Admitted · Class of {uni.classYear || "2030"}
       </div>
     </div>
   );

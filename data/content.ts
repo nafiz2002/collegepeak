@@ -213,7 +213,7 @@ export const FAQS: Faq[] = [
   {
     question: "How much does CollegePeak cost?",
     answer:
-      "Our Personal Mentorship Program is 99,999 BDT. For the Premium Mentorship Program, we recommend scheduling a strategy session so we can determine whether it's the right fit for your goals. We also offer focused services — the Essay Master Service (35,000 BDT), the College Listing Program (10,000 BDT), and a completely free Profile Audit to get started.",
+      "Our Personal Mentorship Program is 120,000 BDT. For the Premium Mentorship Program, we recommend scheduling a strategy session so we can determine whether it's the right fit for your goals. We also offer focused services — the Essay Master Service (35,000 BDT), the College Listing Program (10,000 BDT), and a completely free Profile Audit to get started.",
   },
   {
     question: "Do I need a high SAT score to work with you?",
