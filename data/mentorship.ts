@@ -138,7 +138,7 @@ export const ALL_PROGRAMS: Program[] = [
 ];
 
 /** Two headline programs shown on the home page preview. */
-export const PREVIEW_PROGRAMS: Program[] = [PERSONAL_PROGRAM, PREMIUM_PROGRAM];
+export const PREVIEW_PROGRAMS: Program[] = [PREMIUM_PROGRAM, PERSONAL_PROGRAM];
 
 /* ---------- Comparison table ---------- */
 

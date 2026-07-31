@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 
@@ -16,9 +19,9 @@ type UniversityMarkProps = {
 /**
  * Renders an elegant monogram crest for a university.
  *
- * To use an official mark instead: drop the SVG at /public/logos/<slug>.svg,
+ * To use an official mark instead: drop the SVG/PNG at /public/logos/<slug>.png,
  * then pass `hasLogo` — the component swaps to next/image automatically.
- * This keeps the marquee free of trademarked assets by default.
+ * Includes automatic error fallback to monogram if an image fails to load.
  */
 export function UniversityMark({
   initials,
@@ -29,7 +32,9 @@ export function UniversityMark({
   size = 56,
   className,
 }: UniversityMarkProps) {
-  if (hasLogo && slug) {
+  const [imgError, setImgError] = useState(false);
+
+  if (hasLogo && slug && !imgError) {
     return (
       <span
         className={cn(
@@ -44,6 +49,7 @@ export function UniversityMark({
           width={size}
           height={size}
           className="h-full w-full object-contain p-0.5"
+          onError={() => setImgError(true)}
         />
       </span>
     );

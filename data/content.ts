@@ -159,29 +159,29 @@ export type Testimonial = {
 export const TESTIMONIALS: Testimonial[] = [
   {
     quote:
-      "CollegePeak turned a scattered list of dreams into an actual plan. I went from unsure to admitted — with a scholarship I didn't think was possible.",
-    author: "Applicant, Class of 2030",
-    detail: "Admitted with merit aid",
-    initials: "A",
+      "CollegePeak turned a scattered list of dreams into an actual plan. I went from unsure to admitted, with a scholarship I didn't think was possible.",
+    author: "Nahian, Class of 2029 - Gettysburg College",
+    detail: "Abraham Lincoln Scholar",
+    initials: "N",
   },
   {
     quote:
       "My mentor pushed me to build something real, not just look good on paper. The essays finally sounded like me. That made all the difference.",
-    author: "Applicant, Class of 2030",
-    detail: "Multiple offers",
-    initials: "R",
+    author: "Galib, Class of 2029, Oberlin College",
+    detail: "John F Oberlin Scholar",
+    initials: "G",
   },
   {
     quote:
       "The strategy was the part I never knew I was missing. Every week had a clear next step, and every deadline was handled before it became stressful.",
-    author: "Parent of an admitted student",
-    detail: "Full application support",
+    author: "Shahriar, Denison College, Class of 2030",
+    detail: "Near Full Ride with 4 Years Gap",
     initials: "S",
   },
   {
     quote:
       "From profile building to the visa interview, they were there for every step. It felt less like a service and more like a team that wanted me to win.",
-    author: "Applicant, Class of 2030",
+    author: "Mahfuz, Class of 2029",
     detail: "Offer + visa secured",
     initials: "M",
   },
